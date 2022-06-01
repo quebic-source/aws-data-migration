@@ -1,3 +1,9 @@
 config:
   aws:region: us-east-1
   pulumi:template: aws-python
+
+  fargate_container:cpu: 256
+  fargate_container:memory: 512
+  fargate_container:replicas: 1
+  fargate_container:vpc: vpc-0cd578a7433217bd2
+  fargate_container:subnet: subnet-035569bc998420927
