@@ -24,10 +24,10 @@ jobs:
       - name: docker build and publish
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: brell-infra-${{ env.DEPLOY_ENV }}-api
+          image: aws-data-migration-${{ env.DEPLOY_ENV }}
           tags: ${{ env.GITHUB_REF_SLUG_URL }}-${{ env.GITHUB_SHA_SHORT }}
-          dockerfile: server/Dockerfile
-          buildArgs: SRC_DIR=server
+          dockerfile: src/Dockerfile
+          buildArgs: SRC_DIR=src
           registry: ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com
 
   deploy:
