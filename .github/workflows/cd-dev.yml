@@ -53,5 +53,5 @@ jobs:
           stack-name: ${{ env.DEPLOY_ENV }}
           work-dir: ./infra
         env:
-          DOCKER_HOST: ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com
+          DOCKER_IMAGE: ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/aws-data-migration-${{ env.DEPLOY_ENV }}
           DOCKER_IMAGE_TAG: ${{ env.GITHUB_REF_SLUG_URL }}-${{ env.GITHUB_SHA_SHORT }}
