@@ -22,7 +22,7 @@ class FargateResource:
         task_id = get_resource_name('app-task')
 
         log_group = f"/ecs/{task_id}-logs"
-        aws.cloudwatch.LogGroup(log_group, tags={"Name": log_group})
+        aws.cloudwatch.LogGroup(log_group, tags={"Name": log_group}, name=log_group)
 
         aws.ecs.TaskDefinition(task_id,
                                family=task_id,
