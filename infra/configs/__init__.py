@@ -16,8 +16,8 @@ class FargateConfig:
         self.cpu = pulumi.Config('fargate_container').require_int('cpu')
         self.memory = pulumi.Config('fargate_container').require_int('memory')
         self.replicas = pulumi.Config('fargate_container').require_int('replicas')
-        self.vpc = pulumi.Config('fargate_container').require_int('vpc')
-        self.subnet = pulumi.Config('fargate_container').require_int('subnet')
+        self.vpc = pulumi.Config('fargate_container').require('vpc')
+        self.subnet = pulumi.Config('fargate_container').require('subnet')
         self.docker_image = f"{os.environ['DOCKER_HOST']}:{os.environ['DOCKER_IMAGE_TAG']}"
         self.env_vars = [
                 {
