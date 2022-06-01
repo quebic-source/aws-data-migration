@@ -1,0 +1,6 @@
+name: aws-data-migration
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: aws-data-migration
