@@ -13,8 +13,13 @@ def get_logger(module_name):
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
 
+    # formatter = logging.Formatter(
+    #     '%(asctime)s - %(name)s:%(lineno)d - %(levelname)s - %(message)s',
+    #     datefmt='%Y/%m/%d %I:%M:%S %p'
+    # )
+
     formatter = logging.Formatter(
-        '%(asctime)s - %(name)s:%(lineno)d - %(levelname)s - %(message)s',
+        '%(name)s:%(lineno)d - %(levelname)s - %(message)s',
         datefmt='%Y/%m/%d %I:%M:%S %p'
     )
 
